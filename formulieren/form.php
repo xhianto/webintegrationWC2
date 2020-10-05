@@ -15,7 +15,7 @@ if (isset($_POST["form"])){
         if(valideerFile($_FILES["bestand"])){
             $resultaat = "<div class=\"alert alert-success\"><p>Bestand uploaden is gelukt</p><img src=\"uploads/". $_FILES["bestand"]["name"] ."\" style=\"max-width:100%; height:auto;\" /><br /><a href=\"uploads/". $_FILES["bestand"]["name"] ."\">Link naar foto</a></div>";
         }else{
-            $resultaat = "<div class=\"alert alert-danger\">Bestand uploaden is mislukt</div>";
+            $resultaat = "<div class=\"alert alert-danger\">Bestand uploaden is mislukt, alleen png of jpg</div>";
         }
     }
 }

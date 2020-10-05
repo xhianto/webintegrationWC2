@@ -40,7 +40,7 @@ function valideerPicture($picture){
     if ($_FILES["picture"]["size"] != 0){
         if ($picture["size"] > 26214400 ){
             return "file is too big (max: 25mb)";
-        }else if (strtolower($picture["type"]) == "image/jpg" || strtolower($picture["type"] == "image/png")){
+        }else if (strtolower($picture["type"]) == "image/jpeg" || strtolower($picture["type"] == "image/png")){
             $upload_dir = "uploads/";
             if ($picture["error"] == "UPLOAD_ERR_OK"){
                 $tmp_name = $picture["tmp_name"];

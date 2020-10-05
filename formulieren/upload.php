@@ -1,6 +1,6 @@
 <?php 
 function valideerFile($file){
-    if (strtolower($file["type"]) == "image/jpg" || strtolower($file["type"] == "image/png")){
+    if ($file["type"] == "image/jpeg" || $file["type"] == "image/png"){
         $upload_dir = "uploads/";
         if ($file["error"] == "UPLOAD_ERR_OK"){
             $tmp_name = $file["tmp_name"];

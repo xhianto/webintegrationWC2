@@ -42,7 +42,7 @@ if(isset($_POST["oef3submit"])){
 
 <body>
     <div class="container">
-        <h1 class="">Welcome to <?php echo $title?></h1>
+        <h1 class=""><?php echo $title?></h1>
         <label>Selecteer een oefening:</label>
         <select id=oefeningDropDown name="oefening">
             <?php
