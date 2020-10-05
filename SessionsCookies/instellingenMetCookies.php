@@ -3,6 +3,7 @@ include "tijdzone.php";
 $taal = "";
 $tijdZones = generate_timezone_list();
 
+session_start();
 if (isset($_POST["submit"])){
     if (isset($_POST["taal"])){
         setcookie("taal", $_POST["taal"]);
@@ -18,6 +19,9 @@ if (isset($_POST["submit"])){
     }
     if (isset($_POST["kleur"])){
         setcookie("kleur", $_POST["kleur"], time()+60*60*24*7);
+        if (isset($_SESSION["kleur"])){
+            unset($_SESSION["kleur"]);
+        }
     }
     else{
         setcookie("kleur", "");
@@ -50,7 +54,7 @@ if (isset($_POST["submit"])){
 <body>
     <div class="container">
         <h2 class="alert alert-info">Oefening 1 en 2: Instellingen</h2>
-        <form action="instellingen.php" method="post">
+        <form action="instellingenMetCookies.php" method="post">
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Taal: </label>
                 <div class="">
